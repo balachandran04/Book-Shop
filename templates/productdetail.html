@@ -1,0 +1,43 @@
+  {% extends 'base.html' %}
+    {% load static %}
+    {% block title %}Product Details{% endblock title %}
+
+    {% block main %}
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Product Image -->
+
+            <div class="col-lg-5">
+                <img src="{{ product_details.image.url }}" class="img-fluid" alt="{{ product_details.title }}">
+            </div>
+            <!-- Product Details -->
+            <div class="col-lg-7">
+                <h1 class="display-4">{{ product_details.title }}</h1>
+                <p class="lead text-success">Rs. {{ product_details.discount_price }}/- <del class="text-muted">Rs. {{ product_details.selling_price }}/-</del></p>
+
+                <!-- Product Features -->
+                <h4>Product Features:</h4>
+                <ul>
+                    <li>{{ product_details.description }}</li>
+
+                </ul>
+
+                <form action="/add_to_cart" class="d-inline">
+                    <input type="hidden" name="prod_id" value="{{ product.id }}">
+                    <button class="btn btn-primary">Add to Cart</button>
+                </form>
+
+
+                <button type="submit" class="btn btn-dark fw-bold" style="background-color: transparent; transition-delay: 0.25s;" onmouseover="this.style.backgroundColor='green'" onmouseout="this.style.backgroundColor='transparent'">
+                    <a href="{% url 'show_cart' %}" class="text-decoration-none text-dark">Buy Now</a>
+
+                 </button>
+
+
+            </div>
+            </div>
+            </div>
+
+
+
+    {% endblock main %}

@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}About Us{% endblock title %}
+
+{% block main %}
+
+
+<!-- Navigation Bar (optional) -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">Book show</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'about' %}">About Us</a>
+                </li>
+                <!-- Add more navigation links as needed -->
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section>
+<style>
+    .about h3{
+        margin-left: 300px;
+        padding: 10px;
+        margin-top: 20px;
+        font-weight: bolder;
+        font-family: 'Pacifico', cursive;
+        letter-spacing: 2px;
+        color: darkred;
+    }
+    .about p{
+        margin-left: 400px;
+        padding: 10px;
+        margin-top: 20px;
+        font-weight: bolder;
+        font-family: 'Montserrat', sans-serif;
+        letter-spacing: 2px;
+        color: black;
+        width: 500px;
+
+
+    }
+ .about img {
+    width: 600px;
+    height: 400px;
+    margin-left: 0;
+    animation: moveimage 2s forwards;
+
+}
+
+@keyframes moveimage {
+    0% {
+        margin-left: 0;
+    }
+    100% {
+        margin-left: 300px;
+    }
+}
+
+
+</style>
+    <div class="about">
+        <h3>About Us</h3>
+        <p>We are Provide Lot of Book in last 2 year
+        Recent BCA graduate from EGS Pillay ATS and Science College with a strong passion for web development.
+            In just two months, I successfully completed an online advertising agency project, showcasing my practical skills in the
+            field. Following that, I dedicated three months to an intensive internship at Need1Need4 Technology,
+            where I honed my core Python skills with hands-on, real-time projects, earning a valuable certificate in the process.
+</p>
+        <img src="{% static 'images/34.jpg' %}">
+    </div>
+</section>
+
+
+{% endblock main %}

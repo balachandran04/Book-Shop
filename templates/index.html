@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+
+
+    {% block banner_slider %}
+
+
+   <div class="h">
+<div  id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'images/banner/b.jpg' %}" class="d-block w-100" style="width: 100%" height="600px" alt="banner">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/banner/12.jpg' %}" class="d-block w-100" style="width: 100%" height="700px" alt="banner">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/banner/14.jpg' %}" class="d-block w-100" style="width: 100%" height="700px" alt="banner">
+    </div>
+       <div class="carousel-item">
+      <img src="{% static 'images/banner/c.jpg' %}" class="d-block w-100" style="width: 100%" height="700px" alt="banner">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</div>
+
+    {% endblock banner_slider%}
+
+
+
+{% block main %}
+    <style>
+    .logos{
+        overflow: hidden;
+        padding: 60px 0;
+
+
+        .logo-slider{
+            animation:   25s  slide infinite linear;
+            display: flex;
+            gap: 50px;
+
+
+        }
+
+
+    }
+    @keyframes slide{
+        from{
+            transform: translateX(0);
+        }
+        to{
+            transform: translateX(-100%);
+
+        }
+    }
+    .logos:hover .logo-slider{
+        animation-play-state: paused;
+    }
+    .logo-slider img{
+        height: 200px;
+
+
+    }
+
+    </style>
+
+
+<div class="logos">
+    <div class="logo-slider">
+
+        <a href="{% url 'category' 'CW' %}"><img src="{% static 'images/log/1.png' %}"></a>
+        <a href="{% url 'category' 'Py' %}"><img src="{% static 'images/log/4.png' %}"></a>
+        <a href="{% url 'category' 'JA' %}"><img src="{% static 'images/log/13.png' %}"></a>
+        <a href="{% url 'category' 'CC' %}"><img src="{% static 'images/log/5.png' %}"></a>
+        <a href="{% url 'category' 'HT' %}"><img src="{% static 'images/log/6.png' %}"></a>
+        <a href="{% url 'category' 'CS' %}"><img src="{% static 'images/log/7.png' %}"></a>
+        <a href="{% url 'category' 'JS' %}"><img src="{% static 'images/log/8.png' %}"></a>
+        <a href="{% url 'category' 'JS' %}"><img src="{% static 'images/log/9.png' %}"></a>
+        <a href="{% url 'category' 'JS' %}"><img src="{% static 'images/log/10.png' %}"></a>
+        <a href="{% url 'category' 'JS' %}"><img src="{% static 'images/log/11.png' %}"></a>
+        <a href="{% url 'category' 'JS' %}"><img src="{% static 'images/log/12.png' %}"></a>
+        <a href="{% url 'category' 'JS' %}"><img src="{% static 'images/log/14.png' %}"></a>
+    </div>
+</div>
+
+    <style>
+     .book{
+        display: flex;
+        justify-content: space-between;
+         margin: 30px;
+         animation: slid;
+    }
+
+     .book img{
+         opacity:70%;
+     }
+     .book img:hover{
+         opacity: 100%;
+     }
+
+    </style>
+<div class="book">
+
+
+    <a href="{% url 'category' 'Py' %}"><img src="{% static 'images/pimg/10.png' %}"  width="150px" height="100%"></a>
+    <a href="{% url 'category' 'CW' %}"><img src="{% static 'images/pimg/11.jpg' %}"  width="150px" height="100%"></a>
+    <a href="{% url 'category' 'CW' %}"><img src="{% static 'images/pimg/12.jpg' %}"  width="150px" height="100%"></a>
+    <a href="{% url 'category' 'CW' %}"><img src="{% static 'images/pimg/13.jpg' %}"  width="150px" height="100%"></a>
+    <a href="{% url 'category' 'CW' %}"><img src="{% static 'images/pimg/14.jpg' %}"  width="150px" height="100%"></a>
+
+  <a href="{% url 'category' 'Py' %}"><img src="{% static 'images/pimg/15.jpg' %}"  width="150px" height="100%"></a>
+    <a href="{% url 'category' 'CW' %}"><img src="{% static 'images/pimg/16.jpg' %}"  width="150px" height="100%"></a>
+    <a href="{% url 'category' 'CW' %}"><img src="{% static 'images/pimg/17.jpg' %}"  width="150px" height="100%"></a>
+    <a href="{% url 'category' 'CW' %}"><img src="{% static 'images/pimg/18.jpg' %}"  width="150px" height="100%"></a>
+    <a href="{% url 'category' 'CW' %}"><img src="{% static 'images/pimg/19.jpg' %}"  width="150px" height="100%"></a>
+
+</div>
+
+
+<div class="book">
+
+
+    <a href="{% url 'category' 'Py' %}"><img src="{% static 'images/pimg/20.jpg' %}"  width="150px" height="100%"></a>
+    <a href="{% url 'category' 'CW' %}"><img src="{% static 'images/pimg/21.jpg' %}"  width="150px" height="100%"></a>
+    <a href="{% url 'category' 'CW' %}"><img src="{% static 'images/pimg/22.jpg' %}"  width="150px" height="100%"></a>
+    <a href="{% url 'category' 'CW' %}"><img src="{% static 'images/pimg/23.jpg' %}"  width="150px" height="100%"></a>
+    <a href="{% url 'category' 'CW' %}"><img src="{% static 'images/pimg/24.jpg' %}"  width="150px" height="100%"></a>
+
+  <a href="{% url 'category' 'Py' %}"><img src="{% static 'images/pimg/25.jpg' %}"  width="150px" height="100%"></a>
+    <a href="{% url 'category' 'CW' %}"><img src="{% static 'images/pimg/26.jpg' %}"  width="150px" height="100%"></a>
+    <a href="{% url 'category' 'CW' %}"><img src="{% static 'images/pimg/27.jpg' %}"  width="150px" height="100%"></a>
+    <a href="{% url 'category' 'CW' %}"><img src="{% static 'images/pimg/28.jpg' %}"  width="150px" height="100%"></a>
+    <a href="{% url 'category' 'CW' %}"><img src="{% static 'images/pimg/29.jpg' %}"  width="150px" height="100%"></a>
+
+</div>
+
+
+
+{% endblock main %}
